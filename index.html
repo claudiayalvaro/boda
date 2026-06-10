@@ -2,9 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <!-- Asegura el correcto escalado en dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boda Claudia & Alvaro</title>
+    <title>Boda Claudia & Álvaro</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
@@ -15,17 +14,17 @@
       }
       body {
         font-family: "Press Start 2P", monospace;
-        background: #1a0a2e;
+        background: #25133d; /* Un poco más claro que el original */
         min-height: 100vh;
         color: #fff;
       }
 
-      /* Ajustes generales de adaptabilidad y tipografía aumentada */
+      /* Ajustes adaptables y tipografía aumentada */
       .hero {
-        background: #1a0a2e;
+        background: #25133d;
         position: relative;
         overflow: hidden;
-        padding: 20px 10px;
+        padding: 25px 10px;
         min-height: 250px;
       }
       .hero-bg {
@@ -38,7 +37,7 @@
         inset: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.18;
+        opacity: 0.15;
       }
 
       .hero-top {
@@ -52,7 +51,6 @@
         padding: 10px;
       }
 
-      /* Media query para pantallas medianas/grandes */
       @media (min-width: 600px) {
         .hero-top {
           flex-direction: row;
@@ -62,15 +60,16 @@
         }
       }
 
+      /* Nombres en la misma línea */
       .hero-names .names {
         font-size: 16px;
-        color: #b8d8b0;
+        color: #ccebc4;
         line-height: 1.6;
-        text-shadow: 0 0 10px #b8d8b055;
+        text-shadow: 0 0 10px #ccebc455;
       }
       .hero-names .fecha {
         font-size: 11px;
-        color: #e8c4e0;
+        color: #ebd1e6;
         margin-top: 10px;
         line-height: 1.6;
       }
@@ -95,67 +94,71 @@
       }
       .adventure-title {
         display: inline-block;
-        background: #6b2667;
-        border: 3px solid #b8d8b0;
+        background: #82337d;
+        border: 3px solid #ccebc4;
         padding: 16px 20px;
         margin-bottom: 12px;
-        animation: glow 2s infinite alternate;
         max-width: 100%;
-      }
-      @keyframes glow {
-        from {
-          box-shadow: 0 0 8px #6b266755;
-        }
-        to {
-          box-shadow:
-            0 0 20px #6b2667aa,
-            0 0 40px #b8d8b033;
-        }
+        box-shadow: 0 0 15px rgba(130, 51, 125, 0.4);
       }
       .adventure-title p {
-        font-size: 14px;
+        font-size: 13px;
         color: #fff;
         line-height: 1.8;
-        text-shadow: 2px 2px #3a0040;
-      }
-      .adventure-sub {
-        font-size: 11px;
-        color: #b8d8b0;
-        line-height: 1.6;
-        margin-top: 10px;
+        text-shadow: 2px 2px #4a1c47;
       }
 
-      .px {
-        width: 8px;
-        height: 8px;
+      /* Estilos de Cuenta Atrás Retro */
+      .countdown-container {
+        margin: 20px auto;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 2px dashed #ccebc4;
+        max-width: 290px;
         display: inline-block;
       }
-      .pR {
-        background: #e03030;
+      .countdown-label {
+        font-size: 10px;
+        color: #ebd1e6;
+        margin-bottom: 8px;
+        line-height: 1.4;
       }
-      .pS {
-        background: #f4c080;
+      .countdown-days {
+        font-size: 20px;
+        color: #ffeb3b;
+        text-shadow: 2px 2px #000;
+        margin: 5px 0;
       }
-      .pB {
-        background: #703010;
+
+      /* Botón/Sección de Spotify */
+      .spotify-box {
+        margin-top: 15px;
+        background: #1db954;
+        border: 3px solid #fff;
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 10px;
+        transition: transform 0.1s;
       }
-      .row {
-        display: flex;
-        justify-content: center;
+      .spotify-box:hover {
+        transform: scale(1.05);
       }
 
       .cta-bar {
-        background: #6b2667;
-        border-top: 3px solid #b8d8b0;
-        border-bottom: 3px solid #b8d8b0;
+        background: #82337d;
+        border-top: 3px solid #ccebc4;
+        border-bottom: 3px solid #ccebc4;
         padding: 24px 15px;
         text-align: center;
       }
       .cta-bar a {
         display: inline-block;
-        background: #b8d8b0;
-        border: 3px solid #6b2667;
-        color: #1a0a2e;
+        background: #ccebc4;
+        border: 3px solid #82337d;
+        color: #25133d;
         font-family: "Press Start 2P", monospace;
         font-size: 13px;
         padding: 16px 24px;
@@ -166,10 +169,10 @@
       }
       @keyframes pulse {
         from {
-          box-shadow: 0 0 0 0 #b8d8b077;
+          box-shadow: 0 0 0 0 rgba(204, 235, 196, 0.6);
         }
         to {
-          box-shadow: 0 0 0 8px #b8d8b000;
+          box-shadow: 0 0 0 8px rgba(204, 235, 196, 0);
         }
       }
       .cta-label {
@@ -179,20 +182,21 @@
         line-height: 1.6;
       }
 
+      /* Modificado según el paso 5 */
       .already-bar {
-        background: #2a0a3e;
+        background: #391e5c;
         padding: 20px 15px;
         text-align: center;
-        border-bottom: 2px solid #6b266755;
+        border-bottom: 2px solid #82337d55;
       }
       .already-bar p {
         font-size: 12px;
-        color: #e8c4e0;
+        color: #ebd1e6;
         line-height: 1.6;
       }
       .already-bar .hint {
         font-size: 10px;
-        color: #b8d8b0;
+        color: #ccebc4;
         margin-top: 10px;
         line-height: 1.6;
       }
@@ -203,25 +207,25 @@
         align-items: center;
         gap: 6px;
         padding: 12px;
-        background: #1a0a2e;
+        background: #25133d;
       }
       .pd {
         width: 14px;
         height: 14px;
-        background: #6b2667;
-        border: 1px solid #b8d8b055;
+        background: #82337d;
+        border: 1px solid rgba(204, 235, 196, 0.4);
         animation: bounce 0.7s infinite alternate;
       }
       .pd:nth-child(2) {
         animation-delay: 0.1s;
-        background: #4a1f60;
+        background: #5a2557;
       }
       .pd:nth-child(3) {
         animation-delay: 0.2s;
       }
       .pd:nth-child(4) {
         animation-delay: 0.3s;
-        background: #4a1f60;
+        background: #5a2557;
       }
       .pd:nth-child(5) {
         animation-delay: 0.4s;
@@ -235,27 +239,27 @@
         }
       }
 
-      /* --- SECCIÓN NUEVA: EL MANDO DE CONTROL CONTROLLER --- */
+      /* Mando de Control */
       .controller-container {
-        background: #25123e;
+        background: #311952;
         padding: 30px 15px;
         text-align: center;
-        border-top: 4px solid #6b2667;
+        border-top: 4px solid #82337d;
       }
       .controller-title {
-        font-size: 13px;
-        color: #e8c4e0;
+        font-size: 12px;
+        color: #ebd1e6;
         margin-bottom: 25px;
         line-height: 1.6;
       }
-      /* Estructura de rombo para los 4 botones del mando */
+
       .gamepad {
         position: relative;
         width: 260px;
         height: 260px;
         margin: 0 auto;
-        background: #140522;
-        border: 6px solid #4a1f60;
+        background: #1d0e30;
+        border: 6px solid #5a2557;
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -275,10 +279,10 @@
         align-items: center;
         font-family: "Press Start 2P", monospace;
         color: #fff;
-        font-size: 10px;
+        font-size: 9px;
         transition:
           transform 0.1s,
-          filter 0.1s;
+          box-shadow 0.1s;
         box-shadow: 0 6px 0 #000;
       }
       .btn-control:active {
@@ -293,37 +297,37 @@
       .btn-control p {
         font-size: 7px;
         text-transform: uppercase;
+        text-align: center;
       }
 
-      /* Posiciones y colores del mando retro */
       .btn-top {
         top: 15px;
-        background: #4a90d9;
-        border-color: #7ab3e8;
-      } /* Y - Transporte */
+        background: #549ee6;
+        border-color: #89bfe8;
+      }
       .btn-left {
         left: 15px;
-        background: #e74c7c;
-        border-color: #f0899b;
-      } /* X - Comida */
+        background: #eb5e8a;
+        border-color: #f29cb7;
+      }
       .btn-right {
         right: 15px;
-        background: #4caf50;
-        border-color: #80c784;
-      } /* B - Ocio */
+        background: #5cb860;
+        border-color: #9cd4a0;
+      }
       .btn-bottom {
         bottom: 15px;
-        background: #ff9800;
-        border-color: #ffb74d;
-      } /* A - Info */
+        background: #ffaa24;
+        border-color: #ffcc73;
+      } /* Ubícate */
 
-      /* --- SISTEMA DE VENTANAS MODALES --- */
+      /* Modales */
       .modal {
         display: none;
         position: fixed;
         inset: 0;
         z-index: 100;
-        background: rgba(13, 5, 25, 0.85);
+        background: rgba(22, 11, 36, 0.9);
         align-items: center;
         justify-content: center;
         padding: 15px;
@@ -333,8 +337,8 @@
       }
 
       .modal-content {
-        background: #1a0a2e;
-        border: 4px solid #b8d8b0;
+        background: #25133d;
+        border: 4px solid #ccebc4;
         width: 100%;
         max-width: 500px;
         max-height: 85vh;
@@ -362,14 +366,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 3px solid #b8d8b0;
+        border-bottom: 3px solid #ccebc4;
       }
       .modal-title {
-        font-size: 13px;
+        font-size: 12px;
         font-weight: bold;
       }
       .close-modal {
-        background: #e74c7c;
+        background: #eb5e8a;
         color: #fff;
         border: 2px solid #fff;
         padding: 6px 10px;
@@ -378,50 +382,42 @@
         font-size: 11px;
       }
 
-      /* Colores temáticos de cabeceras de Modales */
       .modal-transport .modal-header {
-        background: #0d1f3c;
-        color: #4a90d9;
+        background: #162f54;
+        color: #549ee6;
       }
       .modal-food .modal-header {
-        background: #2d0d1a;
-        color: #e74c7c;
+        background: #3b1625;
+        color: #eb5e8a;
       }
       .modal-leisure .modal-header {
-        background: #0d2d1a;
-        color: #4caf50;
+        background: #163b22;
+        color: #5cb860;
       }
-      .modal-info .modal-header {
-        background: #3e2710;
-        color: #ff9800;
+      .modal-ubicate .modal-header {
+        background: #4a341b;
+        color: #ffaa24;
       }
 
-      /* Rejilla de tarjetas dentro de los modales */
       .col-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 12px;
         padding: 16px;
       }
-      @media (min-width: 400px) {
+      @media (min-width: 420px) {
         .col-grid {
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
         }
       }
 
       .card {
-        background: #ffffff0d;
-        border: 2px solid #6b266766;
+        background: rgba(255, 255, 255, 0.06);
+        border: 2px solid rgba(130, 51, 125, 0.4);
         padding: 14px 10px;
         text-align: center;
         text-decoration: none;
         display: block;
-        transition:
-          transform 0.1s,
-          background 0.1s;
-      }
-      .card:hover {
-        background: #ffffff1a;
       }
       .card-icon {
         font-size: 24px;
@@ -429,51 +425,81 @@
       }
       .card-name {
         font-size: 10px;
-        color: #b8d8b0;
+        color: #ccebc4;
         line-height: 1.6;
         margin-bottom: 6px;
-        font-family: "Press Start 2P", monospace;
       }
       .card-desc {
         font-size: 8px;
-        color: #ccc;
+        color: #ddd;
         line-height: 1.6;
-        font-family: "Press Start 2P", monospace;
       }
       .card-link {
         display: inline-block;
         margin-top: 10px;
         font-size: 8px;
-        background: #6b2667;
-        color: #b8d8b0;
+        background: #82337d;
+        color: #ccebc4;
         padding: 6px 10px;
         text-decoration: none;
-        font-family: "Press Start 2P", monospace;
-        border: 1px solid #b8d8b0;
+        border: 1px solid #ccebc4;
       }
 
-      .badge-taxi {
-        border-color: #4a90d966;
-        background: #1a3a6e22;
+      /* Tarjeta informativa extra para Ocio */
+      .info-walk-card {
+        background: rgba(204, 235, 196, 0.1);
+        border: 2px dashed #ccebc4;
+        padding: 12px;
+        font-size: 8px;
+        color: #fff;
+        line-height: 1.8;
+        text-align: left;
+        grid-column: 1 / -1;
       }
-      .badge-food {
-        border-color: #e74c7c66;
-        background: #5c1a2e22;
+
+      /* Sección de misiones del mapa */
+      .mission-box {
+        background: rgba(0, 0, 0, 0.2);
+        border: 2px solid #ffaa24;
+        padding: 14px;
+        margin: 16px;
+        font-size: 8px;
+        line-height: 1.8;
+        text-align: left;
       }
-      .badge-leisure {
-        border-color: #4caf5066;
-        background: #1a5c2e22;
+      .mission-title {
+        font-size: 10px;
+        color: #ffaa24;
+        margin-bottom: 8px;
+        text-align: center;
       }
 
       .footer-bar {
         height: 28px;
         background: repeating-linear-gradient(
           90deg,
-          #6b2667 0,
-          #6b2667 28px,
-          #b8d8b0 28px,
-          #b8d8b0 56px
+          #82337d 0,
+          #82337d 28px,
+          #ccebc4 28px,
+          #ccebc4 56px
         );
+      }
+
+      /* Contenedor adaptativo de Maps */
+      .map-responsive {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+        margin: 16px;
+        border: 2px solid #ffaa24;
+      }
+      .map-responsive iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
       }
     </style>
   </head>
@@ -483,109 +509,65 @@
         <canvas id="bgCanvas"></canvas>
       </div>
       <div class="hero-top">
+        <!-- Nombres Claudia y Álvaro en la misma línea -->
         <div class="hero-names">
-          <div class="names">&#9829; CLAUDIA<br />&amp; ALVARO &#9829;</div>
+          <div class="names">&#9829; CLAUDIA &amp; ALVARO &#9829;</div>
           <div class="fecha">
-            &#128197; [FECHA DE LA BODA]<br />&#128205; Jerez de la Frontera
+            &#128197; 17 Octubre 2026 a las 12:00h<br />&#128205; Jerez de la
+            Frontera
           </div>
         </div>
+        <!-- Espacio para el Logotipo personalizado -->
         <div class="logo-box">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <rect x="32" y="8" width="36" height="40" rx="16" fill="#6b2667" />
-            <rect x="32" y="8" width="6" height="6" fill="#b8d8b0" />
-            <rect x="44" y="8" width="6" height="6" fill="#b8d8b0" />
-            <rect x="56" y="8" width="6" height="6" fill="#b8d8b0" />
-            <rect x="38" y="14" width="6" height="6" fill="#b8d8b0" />
-            <rect x="50" y="14" width="6" height="6" fill="#b8d8b0" />
-            <rect x="62" y="14" width="6" height="6" fill="#b8d8b0" />
-            <rect x="32" y="20" width="36" height="24" rx="4" fill="#b8d8b0" />
-            <rect x="38" y="24" width="24" height="16" rx="2" fill="#6b2667" />
-            <rect x="46" y="46" width="8" height="14" fill="#6b2667" />
-            <rect x="34" y="58" width="32" height="6" rx="3" fill="#6b2667" />
-            <rect x="24" y="28" width="8" height="8" fill="#b8d8b0" />
-            <rect x="68" y="28" width="8" height="8" fill="#b8d8b0" />
-            <rect x="6" y="46" width="20" height="5" fill="#b8d8b0" />
-            <rect x="6" y="70" width="20" height="5" fill="#b8d8b0" />
-            <rect x="6" y="46" width="5" height="29" fill="#b8d8b0" />
-            <rect x="74" y="46" width="5" height="29" fill="#b8d8b0" />
-            <rect x="88" y="46" width="5" height="29" fill="#b8d8b0" />
-            <rect x="74" y="46" width="19" height="5" fill="#b8d8b0" />
-            <rect x="74" y="58" width="19" height="5" fill="#b8d8b0" />
+            <!-- Reemplazar este contenido por el SVG del logo real si se prefiere -->
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              fill="#82337d"
+              stroke="#ccebc4"
+              stroke-width="4"
+            />
+            <text
+              x="50"
+              y="58"
+              font-family="sans-serif"
+              font-size="22"
+              font-weight="bold"
+              fill="#ccebc4"
+              text-anchor="middle"
+            >
+              C&amp;A
+            </text>
           </svg>
         </div>
       </div>
+
       <div class="hero-center">
+        <!-- Nuevo bloque de títulos solicitado en punto 4 -->
         <div class="adventure-title">
-          <p>
-            &#9733; CONFIRMA AQUI<br />TU PARTICIPACION<br />EN LA AVENTURA
-            &#9733;
-          </p>
+          <p>BIENVENIDOS A LA AVENTURA<br />Guia para invitados</p>
         </div>
-        <div class="adventure-sub">
-          Bienvenidos a Jerez &#8212; Guia para invitados
+
+        <!-- Cuenta atrás interactiva dinámica (Punto 10) -->
+        <div>
+          <div class="countdown-container">
+            <div class="countdown-label">QUEDAN</div>
+            <div class="countdown-days" id="countdown-timer">---</div>
+            <div class="countdown-label">DÍAS PARA LA BODA</div>
+          </div>
         </div>
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 14px;
-          "
-        >
-          <div class="row">
-            <span class="px pR"></span><span class="px pR"></span
-            ><span class="px pR"></span
-            ><span
-              class="px"
-              style="background: transparent; width: 16px"
-            ></span
-            ><span class="px pR"></span><span class="px pR"></span
-            ><span class="px pR"></span>
-          </div>
-          <div class="row">
-            <span class="px" style="background: transparent"></span
-            ><span class="px pB"></span><span class="px pS"></span
-            ><span class="px pB"></span
-            ><span
-              class="px"
-              style="background: transparent; width: 16px"
-            ></span
-            ><span class="px pB"></span><span class="px pS"></span
-            ><span class="px pB"></span
-            ><span class="px" style="background: transparent"></span>
-          </div>
-          <div class="row">
-            <span class="px pR"></span><span class="px pR"></span
-            ><span class="px pR"></span
-            ><span
-              class="px"
-              style="background: transparent; width: 16px"
-            ></span
-            ><span class="px pR"></span><span class="px pR"></span
-            ><span class="px pR"></span>
-          </div>
-          <div class="row">
-            <span class="px pR"></span
-            ><span class="px" style="background: transparent"></span
-            ><span class="px pR"></span
-            ><span
-              class="px"
-              style="background: transparent; width: 16px"
-            ></span
-            ><span class="px pR"></span
-            ><span class="px" style="background: transparent"></span
-            ><span class="px pR"></span>
-          </div>
-          <div class="row">
-            <span class="px pB"></span><span class="px pB"></span
-            ><span class="px" style="background: transparent; width: 8px"></span
-            ><span
-              class="px"
-              style="background: transparent; width: 16px"
-            ></span
-            ><span class="px" style="background: transparent; width: 8px"></span
-            ><span class="px pB"></span><span class="px pB"></span>
-          </div>
+
+        <!-- Lista motivacional de Spotify (Punto 11) -->
+        <div>
+          <a
+            href="https://open.spotify.com"
+            target="_blank"
+            class="spotify-box"
+          >
+            &#9835; Pincha aquí y comienza a motivarte &#9834;
+          </a>
         </div>
       </div>
     </div>
@@ -605,12 +587,10 @@
       <div class="pd"></div>
     </div>
 
+    <!-- Barra "¿Has confirmado?" (Punto 5) -->
     <div class="already-bar">
-      <p>&#10003; &#160; YA HAS CONFIRMADO?</p>
-      <div class="hint">
-        &#128197; Ve preparando lo que necesites &#8212; &#9993; Prepara tu
-        equipaje!
-      </div>
+      <p>¿HAS CONFIRMADO?</p>
+      <div class="hint">&#129409; Prepara tu equipaje para la aventura.</div>
     </div>
 
     <div class="pixel-divider">
@@ -621,7 +601,7 @@
       <div class="pd"></div>
     </div>
 
-    <!-- NUEVA SECCIÓN: PANEL DE MANDOS -->
+    <!-- PANEL DEL MANDO RETRO -->
     <div class="controller-container">
       <div class="controller-title">
         &#127918; SELECCIONA UNA OPCION EN EL MANDO:
@@ -630,7 +610,7 @@
       <div class="gamepad">
         <div class="btn-control btn-top" onclick="openModal('modal-transport')">
           <span>Y</span>
-          <p>Transporte</p>
+          <p>Transp.</p>
         </div>
         <div class="btn-control btn-left" onclick="openModal('modal-food')">
           <span>X</span>
@@ -640,14 +620,17 @@
           <span>B</span>
           <p>Ocio</p>
         </div>
-        <div class="btn-control btn-bottom" onclick="openModal('modal-info')">
+        <div
+          class="btn-control btn-bottom"
+          onclick="openModal('modal-ubicate')"
+        >
           <span>A</span>
-          <p>Boda</p>
+          <p>Ubícate</p>
         </div>
       </div>
     </div>
 
-    <!-- VENTANA MODAL: TRANSPORTE -->
+    <!-- MODAL: TRANSPORTE (Punto 6) -->
     <div id="modal-transport" class="modal modal-transport">
       <div class="modal-content">
         <div class="modal-header">
@@ -658,50 +641,50 @@
         </div>
         <div class="col-grid">
           <a
-            class="card badge-taxi"
+            class="card"
             href="http://www.teletaxijerez.com/"
             target="_blank"
+            style="background: rgba(84, 158, 230, 0.15)"
           >
             <div class="card-icon">&#128661;</div>
             <div class="card-name">Radio Taxi Jerez</div>
-            <div class="card-desc">24h &#8212; Tel: 956 34 48 60</div>
+            <div class="card-desc">
+              Servicio 24 horas disponible en toda la ciudad.
+            </div>
             <span class="card-link">Ver web &#9658;</span>
           </a>
-          <div class="card badge-taxi">
-            <div class="card-icon">&#128205;</div>
-            <div class="card-name">Parada Plaza del Arenal</div>
-            <div class="card-desc">Centro histórico. Parada principal.</div>
-          </div>
-          <div class="card badge-taxi">
-            <div class="card-icon">&#128205;</div>
-            <div class="card-name">Parada Estación AVE</div>
-            <div class="card-desc">Junto a la estación de tren.</div>
-          </div>
-          <div class="card badge-taxi">
+          <div class="card" style="background: rgba(84, 158, 230, 0.1)">
             <div class="card-icon">&#128663;</div>
             <div class="card-name">Parking El Arenal</div>
-            <div class="card-desc">Centro. Barato y cerca de todo.</div>
+            <div class="card-desc">
+              24h — Tel: 956325076<br />Se puede reservar plaza.
+            </div>
           </div>
-          <div class="card badge-taxi">
+          <div class="card" style="background: rgba(84, 158, 230, 0.1)">
             <div class="card-icon">&#128663;</div>
-            <div class="card-name">Parking Estación</div>
-            <div class="card-desc">Junto al AVE. Económico.</div>
+            <div class="card-name">Parking Plaza Madre de Dios</div>
+            <div class="card-desc">
+              Tel: 912302032<br />Se puede reservar plaza.
+            </div>
           </div>
           <a
-            class="card badge-taxi"
-            href="https://www.cabify.com"
+            class="card"
+            href="https://www.renfe.com"
             target="_blank"
+            style="background: rgba(84, 158, 230, 0.15)"
           >
-            <div class="card-icon">&#128241;</div>
-            <div class="card-name">Cabify / Uber</div>
-            <div class="card-desc">Apps disponibles en Jerez.</div>
-            <span class="card-link">Descargar &#9658;</span>
+            <div class="card-icon">&#128646;</div>
+            <div class="card-name">Renfe</div>
+            <div class="card-desc">
+              Conexiones de tren nacionales de media y larga distancia.
+            </div>
+            <span class="card-link">Web Renfe &#9658;</span>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- VENTANA MODAL: ALIMENTACIÓN -->
+    <!-- MODAL: ALIMENTACIÓN (Punto 8) -->
     <div id="modal-food" class="modal modal-food">
       <div class="modal-content">
         <div class="modal-header">
@@ -711,125 +694,130 @@
           </button>
         </div>
         <div class="col-grid">
-          <a
-            class="card badge-food"
-            href="http://ventaelalbero.com"
-            target="_blank"
-          >
-            <div class="card-icon">&#127859;</div>
-            <div class="card-name">Venta El Albero</div>
-            <div class="card-desc">Cocina andaluza. 4.8&#11088;</div>
-            <span class="card-link">Ver web &#9658;</span>
-          </a>
-          <a
-            class="card badge-food"
-            href="https://tabancoelpasaje.com/reservas/"
-            target="_blank"
-          >
+          <div class="card">
             <div class="card-icon">&#127861;</div>
-            <div class="card-name">Tabanco El Pasaje</div>
-            <div class="card-desc">Flamenco y vinos. 4.5&#11088;</div>
-            <span class="card-link">Reservar &#9658;</span>
-          </a>
-          <div class="card badge-food">
-            <div class="card-icon">&#127830;</div>
-            <div class="card-name">Las Banderillas</div>
-            <div class="card-desc">Tapas en San Miguel. Clásico.</div>
+            <div class="card-name">Tabanco Plateros</div>
+            <div class="card-desc">Vinos de Jerez y tapas típicas.</div>
           </div>
-          <div class="card badge-food">
+          <div class="card">
+            <div class="card-icon">&#127861;</div>
+            <div class="card-name">Tabanco Los Monos</div>
+            <div class="card-desc">Ambiente tradicional y solera.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127858;</div>
+            <div class="card-name">Bar Juanito</div>
+            <div class="card-desc">Famoso por sus alcachofas y guisos.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127830;</div>
+            <div class="card-name">Tabanco Las Banderillas</div>
+            <div class="card-desc">Tapas clásicas en San Miguel.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127861;</div>
+            <div class="card-name">Tabanco San Pablo</div>
+            <div class="card-desc">Uno de los tabancos más antiguos.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127859;</div>
+            <div class="card-name">Restaurante El Almacén</div>
+            <div class="card-desc">Gastronomía cuidada y gran sabor.</div>
+          </div>
+          <div class="card">
             <div class="card-icon">&#129367;</div>
-            <div class="card-name">Atuvera</div>
-            <div class="card-desc">Raciones en el casco histórico.</div>
+            <div class="card-name">Jaleo - Casa Tatas</div>
+            <div class="card-desc">Raciones y rincón con encanto.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- VENTANA MODAL: TIEMPO LIBRE -->
+    <!-- MODAL: TIEMPO LIBRE (Punto 7) -->
     <div id="modal-leisure" class="modal modal-leisure">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-title">&#127963; TIEMPO LIBRE</div>
+          <div class="modal-title">&#127963; OCIO Y TIEMPO LIBRE</div>
           <button class="close-modal" onclick="closeModal('modal-leisure')">
             X
           </button>
         </div>
         <div class="col-grid">
-          <a
-            class="card badge-leisure"
-            href="https://www.tiopepe.com/"
-            target="_blank"
-          >
+          <a class="card" href="https://www.tiopepe.com/" target="_blank">
             <div class="card-icon">&#127863;</div>
-            <div class="card-name">Bodegas Tio Pepe</div>
-            <div class="card-desc">La bodega más emblemática.</div>
-            <span class="card-link">Reservar &#9658;</span>
+            <div class="card-name">González Byass</div>
+            <div class="card-desc">La mítica e icónica bodega de Tío Pepe.</div>
           </a>
-          <a
-            class="card badge-leisure"
-            href="https://www.realescuela.org/"
-            target="_blank"
-          >
+          <div class="card">
+            <div class="card-icon">&#127863;</div>
+            <div class="card-name">Bodegas Fundador</div>
+            <div class="card-desc">Historia líquida y brandy de Jerez.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127863;</div>
+            <div class="card-name">Bodegas Lustau</div>
+            <div class="card-desc">
+              Vinos de alta calidad reconocidos mundialmente.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127984;</div>
+            <div class="card-name">Claustros de Santo Domingo</div>
+            <div class="card-desc">Espacio monumental e histórico único.</div>
+          </div>
+          <a class="card" href="https://www.realescuela.org/" target="_blank">
             <div class="card-icon">&#128014;</div>
             <div class="card-name">Real Escuela Ecuestre</div>
-            <div class="card-desc">Espectáculo único. 4.5&#11088;</div>
-            <span class="card-link">Ver &#9658;</span>
+            <div class="card-desc">Espectáculo ecuestre de renombre.</div>
           </a>
-          <a
-            class="card badge-leisure"
-            href="https://www.jerez.es/webs-municipales/conjunto-monumental-del-alcazar"
-            target="_blank"
-          >
-            <div class="card-icon">&#127984;</div>
-            <div class="card-name">Alcázar de Jerez</div>
-            <div class="card-desc">Fortaleza árabe. Solo 5&#8364;.</div>
-            <span class="card-link">Info &#9658;</span>
-          </a>
-          <a
-            class="card badge-leisure"
-            href="http://www.catedraldejerez.es/"
-            target="_blank"
-          >
+          <a class="card" href="http://www.catedraldejerez.es/" target="_blank">
             <div class="card-icon">&#9962;</div>
             <div class="card-name">Catedral de Jerez</div>
-            <div class="card-desc">Joya barroca. Entrada libre.</div>
-            <span class="card-link">Info &#9658;</span>
+            <div class="card-desc">Joya majestuosa del barroco jerezano.</div>
           </a>
-          <div class="card badge-leisure">
-            <div class="card-icon">&#128483;</div>
-            <div class="card-name">Barrio San Miguel</div>
-            <div class="card-desc">Flamenco, tabancos y patios.</div>
-          </div>
-          <div class="card badge-leisure">
-            <div class="card-icon">&#9728;</div>
-            <div class="card-name">Plaza del Arenal</div>
-            <div class="card-desc">Terrazas y ambiente en el centro.</div>
+
+          <!-- Bloque informativo inferior para Ocio -->
+          <div class="info-walk-card">
+            &#128095; Si quieres conocer Jerez paseando, recorre los barrios de
+            San Miguel, Santiago, Plaza del Arenal, Calle Larga, Plaza del
+            Mamelón...
           </div>
         </div>
       </div>
     </div>
 
-    <!-- VENTANA MODAL ADICIONAL: INFO BODA (BOTÓN A) -->
-    <div id="modal-info" class="modal modal-info">
+    <!-- MODAL: UBÍCATE (Punto 9) -->
+    <div id="modal-ubicate" class="modal modal-ubicate">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-title">&#128148; LA BODA</div>
-          <button class="close-modal" onclick="closeModal('modal-info')">
+          <div class="modal-title">&#128506; UBÍCATE</div>
+          <button class="close-modal" onclick="closeModal('modal-ubicate')">
             X
           </button>
         </div>
-        <div class="col-grid">
-          <div
-            class="card"
-            style="border-color: #ff980066; background: #ff980011"
-          >
-            <div class="card-icon">&#129346;</div>
-            <div class="card-name">¡Prepárate!</div>
-            <div class="card-desc">
-              ¡Gracias por acompañarnos en este gran día! No olvides confirmar
-              arriba.
-            </div>
-          </div>
+
+        <!-- Mapa de ruta incrustado adaptativo -->
+        <div class="map-responsive">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.213388755073!2d-6.1399824!3d36.6934524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc6ece1df3283%3A0x2dbbe6b8bb8d2bb8!2sPlaza%20Nuestro%20Padre%20Jes%C3%BAs%20de%20la%20Sagrada%20Cena%2C%208%2C%2011403%20Jerez%20de%20la%20Frontera%2C%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1710000000000!5m2!1ses!2ses"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Misiones principales -->
+        <div class="mission-box">
+          <div class="mission-title">&#9876; MISIONES PRINCIPALES &#9876;</div>
+          <p>
+            <strong>A: ¡SÍ, QUIERO!</strong><br />Parroquia de San Marcos -
+            Plaza Nuestro Padre Jesús de la Sagrada Cena, 8
+          </p>
+          <br />
+          <p><strong>B: EL CONVITE</strong><br />(Preguntar a Claudia)</p>
         </div>
       </div>
     </div>
@@ -837,18 +825,15 @@
     <div class="footer-bar"></div>
 
     <script>
-      // Funciones para controlar las Ventanas Modales
+      // Sistema de modales
       function openModal(id) {
         document.getElementById(id).classList.add("open");
-        document.body.style.overflow = "hidden"; // Bloquea scroll de fondo
+        document.body.style.overflow = "hidden";
       }
-
       function closeModal(id) {
         document.getElementById(id).classList.remove("open");
-        document.body.style.overflow = ""; // Libera scroll
+        document.body.style.overflow = "";
       }
-
-      // Cierra el modal si se hace clic fuera del recuadro
       window.onclick = function (event) {
         if (event.target.classList.contains("modal")) {
           event.target.classList.remove("open");
@@ -856,7 +841,25 @@
         }
       };
 
-      // Lógica de Canvas de fondo adaptada
+      // LÓGICA DE CUENTA ATRÁS (Punto 10) - Objetivo: 17 de Octubre de 2026 a las 12:00
+      function updateCountdown() {
+        var targetDate = new Date("Oct 17, 2026 12:00:00").getTime();
+        var now = new Date().getTime();
+        var difference = targetDate - now;
+
+        if (difference <= 0) {
+          document.getElementById("countdown-timer").innerHTML = "0";
+          return;
+        }
+
+        // Cálculo explícito de los días restantes
+        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        document.getElementById("countdown-timer").innerHTML = days;
+      }
+      setInterval(updateCountdown, 60000);
+      updateCountdown();
+
+      // Renderizado del Canvas de fondo pixelado retro
       var c = document.getElementById("bgCanvas");
       var ctx = c.getContext("2d");
       var W, H;
@@ -959,176 +962,6 @@
             ctx.fillRect(x + r[0] * p, y + r[1] * p, p, p);
           });
         },
-        function (x, y, s, col) {
-          ctx.fillStyle = col;
-          var p = s * 2;
-          var cake = [
-            [2, 0],
-            [3, 0],
-            [4, 0],
-            [3, 1],
-            [1, 2],
-            [2, 2],
-            [3, 2],
-            [4, 2],
-            [5, 2],
-            [0, 3],
-            [1, 3],
-            [2, 3],
-            [3, 3],
-            [4, 3],
-            [5, 3],
-            [6, 3],
-            [0, 4],
-            [1, 4],
-            [2, 4],
-            [3, 4],
-            [4, 4],
-            [5, 4],
-            [6, 4],
-            [0, 5],
-            [6, 5],
-            [0, 6],
-            [1, 6],
-            [2, 6],
-            [3, 6],
-            [4, 6],
-            [5, 6],
-            [6, 6],
-          ];
-          cake.forEach(function (r) {
-            ctx.fillRect(x + r[0] * p, y + r[1] * p, p, p);
-          });
-        },
-        function (x, y, s, col) {
-          ctx.fillStyle = col;
-          var p = s * 2;
-          var glass = [
-            [1, 0],
-            [2, 0],
-            [3, 0],
-            [4, 0],
-            [5, 0],
-            [1, 1],
-            [2, 1],
-            [3, 1],
-            [4, 1],
-            [5, 1],
-            [2, 2],
-            [3, 2],
-            [4, 2],
-            [3, 3],
-            [3, 4],
-            [2, 5],
-            [3, 5],
-            [4, 5],
-          ];
-          glass.forEach(function (r) {
-            ctx.fillRect(x + r[0] * p, y + r[1] * p, p, p);
-          });
-        },
-        function (x, y, s, col) {
-          ctx.fillStyle = col;
-          var p = s * 2;
-          var bouquet = [
-            [2, 0],
-            [3, 0],
-            [4, 0],
-            [1, 1],
-            [2, 1],
-            [3, 1],
-            [4, 1],
-            [5, 1],
-            [0, 2],
-            [1, 2],
-            [2, 2],
-            [3, 2],
-            [4, 2],
-            [5, 2],
-            [6, 2],
-            [1, 3],
-            [2, 3],
-            [3, 3],
-            [4, 3],
-            [5, 3],
-            [2, 4],
-            [3, 4],
-            [4, 4],
-            [3, 5],
-            [3, 6],
-            [2, 6],
-            [4, 6],
-            [2, 7],
-            [3, 7],
-            [4, 7],
-          ];
-          bouquet.forEach(function (r) {
-            ctx.fillRect(x + r[0] * p, y + r[1] * p, p, p);
-          });
-        },
-        function (x, y, s, col) {
-          ctx.fillStyle = col;
-          var p = s * 2;
-          var star = [
-            [3, 0],
-            [2, 1],
-            [3, 1],
-            [4, 1],
-            [0, 2],
-            [1, 2],
-            [2, 2],
-            [3, 2],
-            [4, 2],
-            [5, 2],
-            [6, 2],
-            [1, 3],
-            [2, 3],
-            [3, 3],
-            [4, 3],
-            [5, 3],
-            [2, 4],
-            [4, 4],
-            [1, 5],
-            [5, 5],
-          ];
-          star.forEach(function (r) {
-            ctx.fillRect(x + r[0] * p, y + r[1] * p, p, p);
-          });
-        },
-        function (x, y, s, col) {
-          ctx.fillStyle = col;
-          var p = s * 2;
-          var note = [
-            [2, 0],
-            [3, 0],
-            [4, 0],
-            [5, 0],
-            [6, 0],
-            [2, 1],
-            [6, 1],
-            [2, 2],
-            [5, 2],
-            [6, 2],
-            [2, 3],
-            [5, 3],
-            [1, 4],
-            [2, 4],
-            [5, 4],
-            [6, 4],
-            [0, 5],
-            [1, 5],
-            [2, 5],
-            [5, 5],
-            [6, 5],
-            [0, 6],
-            [1, 6],
-            [5, 6],
-            [6, 6],
-          ];
-          note.forEach(function (r) {
-            ctx.fillRect(x + r[0] * p, y + r[1] * p, p, p);
-          });
-        },
       ];
 
       var placed = [];
@@ -1148,10 +981,10 @@
         c.height = H;
         ctx.clearRect(0, 0, W, H);
         placed = [];
-        var cols = ["#6b2667", "#b8d8b0", "#e8c4e0", "#4a1f60", "#d4a0c8"];
+        var cols = ["#82337d", "#ccebc4", "#ebd1e6", "#5a2557"];
         var attempts = 0;
         var count = 0;
-        var target = Math.floor((W * H) / 8000);
+        var target = Math.floor((W * H) / 9000);
         while (count < target && attempts < target * 10) {
           attempts++;
           var s = 1 + Math.floor(Math.random() * 2);
