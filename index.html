@@ -14,7 +14,7 @@
       }
       body {
         font-family: "Press Start 2P", monospace;
-        background: #25133d; /* Un poco más claro que el original */
+        background: #25133d;
         min-height: 100vh;
         color: #fff;
       }
@@ -60,7 +60,6 @@
         }
       }
 
-      /* Nombres en la misma línea */
       .hero-names .names {
         font-size: 16px;
         color: #ccebc4;
@@ -73,17 +72,21 @@
         margin-top: 10px;
         line-height: 1.6;
       }
+
       .logo-box {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      .logo-box svg {
-        width: 86px;
-        height: 86px;
+      .logo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
       }
 
       .hero-center {
@@ -182,7 +185,6 @@
         line-height: 1.6;
       }
 
-      /* Modificado según el paso 5 */
       .already-bar {
         background: #391e5c;
         padding: 20px 15px;
@@ -319,9 +321,9 @@
         bottom: 15px;
         background: #ffaa24;
         border-color: #ffcc73;
-      } /* Ubícate */
+      }
 
-      /* Modales */
+      /* Modales Básicos */
       .modal {
         display: none;
         position: fixed;
@@ -356,6 +358,11 @@
           transform: scale(1);
           opacity: 1;
         }
+      }
+
+      /* Ancho adaptado para las 2 columnas del mapa */
+      .modal-ubicate .modal-content {
+        max-width: 850px;
       }
 
       .modal-header {
@@ -445,7 +452,6 @@
         border: 1px solid #ccebc4;
       }
 
-      /* Tarjeta informativa extra para Ocio */
       .info-walk-card {
         background: rgba(204, 235, 196, 0.1);
         border: 2px dashed #ccebc4;
@@ -455,23 +461,6 @@
         line-height: 1.8;
         text-align: left;
         grid-column: 1 / -1;
-      }
-
-      /* Sección de misiones del mapa */
-      .mission-box {
-        background: rgba(0, 0, 0, 0.2);
-        border: 2px solid #ffaa24;
-        padding: 14px;
-        margin: 16px;
-        font-size: 8px;
-        line-height: 1.8;
-        text-align: left;
-      }
-      .mission-title {
-        font-size: 10px;
-        color: #ffaa24;
-        margin-bottom: 8px;
-        text-align: center;
       }
 
       .footer-bar {
@@ -485,16 +474,65 @@
         );
       }
 
-      /* Contenedor adaptativo de Maps */
-      .map-responsive {
+      /* --- REJILLA PARA MISIONES DOBLES --- */
+      .missions-title-box {
+        background: rgba(0, 0, 0, 0.3);
+        border: 2px dashed #ffaa24;
+        padding: 14px;
+        margin: 16px 16px 4px 16px;
+        text-align: center;
+      }
+      .missions-main-title {
+        font-size: 12px;
+        color: #ffaa24;
+        text-shadow: 1px 1px #000;
+      }
+
+      .missions-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+      }
+      @media (min-width: 700px) {
+        .missions-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .mission-card {
+        background: rgba(0, 0, 0, 0.2);
+        border: 3px solid #ffaa24;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+      }
+      .mission-number {
+        font-size: 11px;
+        color: #ffeb3b;
+        margin-bottom: 8px;
+        text-shadow: 1px 1px #000;
+      }
+      .mission-subtitle {
+        font-size: 9px;
+        color: #ffaa24;
+        margin-bottom: 10px;
+        min-height: 45px;
+        line-height: 1.4;
+      }
+
+      .map-box {
         overflow: hidden;
-        padding-bottom: 56.25%;
+        padding-bottom: 60%;
         position: relative;
         height: 0;
-        margin: 16px;
         border: 2px solid #ffaa24;
+        margin-top: 10px;
+        background: #1d0e30;
       }
-      .map-responsive iframe {
+      .map-box iframe {
         left: 0;
         top: 0;
         height: 100%;
@@ -509,48 +547,23 @@
         <canvas id="bgCanvas"></canvas>
       </div>
       <div class="hero-top">
-        <!-- Nombres Claudia y Álvaro en la misma línea -->
         <div class="hero-names">
-          <div class="names">&#9829; CLAUDIA &amp; ALVARO &#9829;</div>
+          <div class="names">♥ CLAUDIA & ALVARO ♥</div>
           <div class="fecha">
-            &#128197; 17 Octubre 2026 a las 12:00h<br />&#128205; Jerez de la
-            Frontera
+            📅 17 Octubre 2026 a las 12:00h<br />📍 Jerez de la Frontera
           </div>
         </div>
-        <!-- Espacio para el Logotipo personalizado -->
         <div class="logo-box">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <!-- Reemplazar este contenido por el SVG del logo real si se prefiere -->
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="#82337d"
-              stroke="#ccebc4"
-              stroke-width="4"
-            />
-            <text
-              x="50"
-              y="58"
-              font-family="sans-serif"
-              font-size="22"
-              font-weight="bold"
-              fill="#ccebc4"
-              text-anchor="middle"
-            >
-              C&amp;A
-            </text>
-          </svg>
+          <img src="./img/LogoBoda.png" alt="Logo Claudia y Álvaro" />
         </div>
       </div>
 
       <div class="hero-center">
-        <!-- Nuevo bloque de títulos solicitado en punto 4 -->
         <div class="adventure-title">
           <p>BIENVENIDOS A LA AVENTURA<br />Guia para invitados</p>
         </div>
 
-        <!-- Cuenta atrás interactiva dinámica (Punto 10) -->
+        <!-- Cuenta atrás -->
         <div>
           <div class="countdown-container">
             <div class="countdown-label">QUEDAN</div>
@@ -559,23 +572,23 @@
           </div>
         </div>
 
-        <!-- Lista motivacional de Spotify (Punto 11) -->
+        <!-- Enlace de Spotify -->
         <div>
           <a
             href="https://open.spotify.com"
             target="_blank"
             class="spotify-box"
           >
-            &#9835; Pincha aquí y comienza a motivarte &#9834;
+            ♫ Pincha aquí y comienza a motivarte ♪
           </a>
         </div>
       </div>
     </div>
 
     <div class="cta-bar">
-      <div class="cta-label">&#9660; NO TE QUEDES FUERA &#9660;</div>
+      <div class="cta-label">▼ NO TE QUEDES FUERA ▼</div>
       <a href="https://forms.google.com" target="_blank"
-        >&#9654; CONFIRMAR ASISTENCIA</a
+        >▶ CONFIRMAR ASISTENCIA</a
       >
     </div>
 
@@ -587,10 +600,9 @@
       <div class="pd"></div>
     </div>
 
-    <!-- Barra "¿Has confirmado?" (Punto 5) -->
     <div class="already-bar">
       <p>¿HAS CONFIRMADO?</p>
-      <div class="hint">&#129409; Prepara tu equipaje para la aventura.</div>
+      <div class="hint">🦁 Prepara tu equipaje para la aventura.</div>
     </div>
 
     <div class="pixel-divider">
@@ -603,9 +615,7 @@
 
     <!-- PANEL DEL MANDO RETRO -->
     <div class="controller-container">
-      <div class="controller-title">
-        &#127918; SELECCIONA UNA OPCION EN EL MANDO:
-      </div>
+      <div class="controller-title">🎮 SELECCIONA UNA OPCION EN EL MANDO:</div>
 
       <div class="gamepad">
         <div class="btn-control btn-top" onclick="openModal('modal-transport')">
@@ -630,11 +640,11 @@
       </div>
     </div>
 
-    <!-- MODAL: TRANSPORTE (Punto 6) -->
+    <!-- MODAL: TRANSPORTE -->
     <div id="modal-transport" class="modal modal-transport">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-title">&#128661; TRANSPORTE</div>
+          <div class="modal-title">🚕 TRANSPORTE</div>
           <button class="close-modal" onclick="closeModal('modal-transport')">
             X
           </button>
@@ -646,22 +656,22 @@
             target="_blank"
             style="background: rgba(84, 158, 230, 0.15)"
           >
-            <div class="card-icon">&#128661;</div>
+            <div class="card-icon">🚕</div>
             <div class="card-name">Radio Taxi Jerez</div>
             <div class="card-desc">
               Servicio 24 horas disponible en toda la ciudad.
             </div>
-            <span class="card-link">Ver web &#9658;</span>
+            <span class="card-link">Ver web ►</span>
           </a>
           <div class="card" style="background: rgba(84, 158, 230, 0.1)">
-            <div class="card-icon">&#128663;</div>
+            <div class="card-icon">🚗</div>
             <div class="card-name">Parking El Arenal</div>
             <div class="card-desc">
               24h — Tel: 956325076<br />Se puede reservar plaza.
             </div>
           </div>
           <div class="card" style="background: rgba(84, 158, 230, 0.1)">
-            <div class="card-icon">&#128663;</div>
+            <div class="card-icon">🚗</div>
             <div class="card-name">Parking Plaza Madre de Dios</div>
             <div class="card-desc">
               Tel: 912302032<br />Se puede reservar plaza.
@@ -673,59 +683,59 @@
             target="_blank"
             style="background: rgba(84, 158, 230, 0.15)"
           >
-            <div class="card-icon">&#128646;</div>
+            <div class="card-icon">🚆</div>
             <div class="card-name">Renfe</div>
             <div class="card-desc">
               Conexiones de tren nacionales de media y larga distancia.
             </div>
-            <span class="card-link">Web Renfe &#9658;</span>
+            <span class="card-link">Web Renfe ►</span>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- MODAL: ALIMENTACIÓN (Punto 8) -->
+    <!-- MODAL: ALIMENTACIÓN -->
     <div id="modal-food" class="modal modal-food">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-title">&#127859; ALIMENTACIÓN</div>
+          <div class="modal-title">🍳 ALIMENTACIÓN</div>
           <button class="close-modal" onclick="closeModal('modal-food')">
             X
           </button>
         </div>
         <div class="col-grid">
           <div class="card">
-            <div class="card-icon">&#127861;</div>
+            <div class="card-icon">🍵</div>
             <div class="card-name">Tabanco Plateros</div>
             <div class="card-desc">Vinos de Jerez y tapas típicas.</div>
           </div>
           <div class="card">
-            <div class="card-icon">&#127861;</div>
+            <div class="card-icon">🍵</div>
             <div class="card-name">Tabanco Los Monos</div>
             <div class="card-desc">Ambiente tradicional y solera.</div>
           </div>
           <div class="card">
-            <div class="card-icon">&#127858;</div>
+            <div class="card-icon">🍲</div>
             <div class="card-name">Bar Juanito</div>
             <div class="card-desc">Famoso por sus alcachofas y guisos.</div>
           </div>
           <div class="card">
-            <div class="card-icon">&#127830;</div>
+            <div class="card-icon">🍖</div>
             <div class="card-name">Tabanco Las Banderillas</div>
             <div class="card-desc">Tapas clásicas en San Miguel.</div>
           </div>
           <div class="card">
-            <div class="card-icon">&#127861;</div>
+            <div class="card-icon">🍵</div>
             <div class="card-name">Tabanco San Pablo</div>
             <div class="card-desc">Uno de los tabancos más antiguos.</div>
           </div>
           <div class="card">
-            <div class="card-icon">&#127859;</div>
+            <div class="card-icon">🍳</div>
             <div class="card-name">Restaurante El Almacén</div>
             <div class="card-desc">Gastronomía cuidada y gran sabor.</div>
           </div>
           <div class="card">
-            <div class="card-icon">&#129367;</div>
+            <div class="card-icon">🥗</div>
             <div class="card-name">Jaleo - Casa Tatas</div>
             <div class="card-desc">Raciones y rincón con encanto.</div>
           </div>
@@ -733,91 +743,111 @@
       </div>
     </div>
 
-    <!-- MODAL: TIEMPO LIBRE (Punto 7) -->
+    <!-- MODAL: TIEMPO LIBRE -->
     <div id="modal-leisure" class="modal modal-leisure">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-title">&#127963; OCIO Y TIEMPO LIBRE</div>
+          <div class="modal-title">🏛 OCIO Y TIEMPO LIBRE</div>
           <button class="close-modal" onclick="closeModal('modal-leisure')">
             X
           </button>
         </div>
         <div class="col-grid">
           <a class="card" href="https://www.tiopepe.com/" target="_blank">
-            <div class="card-icon">&#127863;</div>
+            <div class="card-icon">🍷</div>
             <div class="card-name">González Byass</div>
             <div class="card-desc">La mítica e icónica bodega de Tío Pepe.</div>
           </a>
           <div class="card">
-            <div class="card-icon">&#127863;</div>
+            <div class="card-icon">🍷</div>
             <div class="card-name">Bodegas Fundador</div>
             <div class="card-desc">Historia líquida y brandy de Jerez.</div>
           </div>
           <div class="card">
-            <div class="card-icon">&#127863;</div>
+            <div class="card-icon">🍷</div>
             <div class="card-name">Bodegas Lustau</div>
             <div class="card-desc">
               Vinos de alta calidad reconocidos mundialmente.
             </div>
           </div>
           <div class="card">
-            <div class="card-icon">&#127984;</div>
+            <div class="card-icon">🏰</div>
             <div class="card-name">Claustros de Santo Domingo</div>
             <div class="card-desc">Espacio monumental e histórico único.</div>
           </div>
           <a class="card" href="https://www.realescuela.org/" target="_blank">
-            <div class="card-icon">&#128014;</div>
+            <div class="card-icon">🐎</div>
             <div class="card-name">Real Escuela Ecuestre</div>
             <div class="card-desc">Espectáculo ecuestre de renombre.</div>
           </a>
           <a class="card" href="http://www.catedraldejerez.es/" target="_blank">
-            <div class="card-icon">&#9962;</div>
+            <div class="card-icon">⛪</div>
             <div class="card-name">Catedral de Jerez</div>
             <div class="card-desc">Joya majestuosa del barroco jerezano.</div>
           </a>
 
-          <!-- Bloque informativo inferior para Ocio -->
           <div class="info-walk-card">
-            &#128095; Si quieres conocer Jerez paseando, recorre los barrios de
-            San Miguel, Santiago, Plaza del Arenal, Calle Larga, Plaza del
+            👟 Si quieres conocer Jerez paseando, recorre los barrios de San
+            Miguel, Santiago, Plaza del Arenal, Calle Larga, Plaza del
             Mamelón...
           </div>
         </div>
       </div>
     </div>
 
-    <!-- MODAL: UBÍCATE (Punto 9) -->
+    <!-- MODAL: UBÍCATE (ACTUALIZADO CON MAPA EN SÁNCHEZ ROMATE) -->
     <div id="modal-ubicate" class="modal modal-ubicate">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-title">&#128506; UBÍCATE</div>
+          <div class="modal-title">🗺 DIARIO DE MISIONES</div>
           <button class="close-modal" onclick="closeModal('modal-ubicate')">
             X
           </button>
         </div>
 
-        <!-- Mapa de ruta incrustado adaptativo -->
-        <div class="map-responsive">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.213388755073!2d-6.1399824!3d36.6934524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc6ece1df3283%3A0x2dbbe6b8bb8d2bb8!2sPlaza%20Nuestro%20Padre%20Jes%C3%BAs%20de%20la%20Sagrada%20Cena%2C%208%2C%2011403%20Jerez%20de%20la%20Frontera%2C%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1710000000000!5m2!1ses!2ses"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <div class="missions-title-box">
+          <div class="missions-main-title">⚔ MISIONES PRINCIPALES ⚔</div>
         </div>
 
-        <!-- Misiones principales -->
-        <div class="mission-box">
-          <div class="mission-title">&#9876; MISIONES PRINCIPALES &#9876;</div>
-          <p>
-            <strong>A: ¡SÍ, QUIERO!</strong><br />Parroquia de San Marcos -
-            Plaza Nuestro Padre Jesús de la Sagrada Cena, 8
-          </p>
-          <br />
-          <p><strong>B: EL CONVITE</strong><br />(Preguntar a Claudia)</p>
+        <div class="missions-grid">
+          <!-- COLUMNA IZQUIERDA: MISIÓN 1 -->
+          <div class="mission-card">
+            <div>
+              <div class="mission-number">MISIÓN 1. ¡SI, QUIERO!</div>
+              <div class="mission-subtitle">
+                Parroquia de San Marcos - Plaza Nuestro Padre Jesús de la
+                Sagrada Cena, 8
+              </div>
+            </div>
+            <div class="map-box">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.213388755073!2d-6.1399824!3d36.6934524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc6ece1df3283%3A0x2dbbe6b8bb8d2bb8!2sPlaza%20Nuestro%20Padre%20Jes%C3%BAs%20de%20la%20Sagrada%20Cena%2C%208%2C%2011403%20Jerez%20de%20la%20Frontera%2C%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1710000000000!5m2!1ses!2ses"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- COLUMNA DERECHA: MISIÓN 2 CORREGIDA -->
+          <div class="mission-card">
+            <div>
+              <div class="mission-number">MISIÓN 2. RECOMPENSA ÉPICA</div>
+              <div class="mission-subtitle">
+                Bodegas Sánchez Romate<br />C. Pizarro, 7, 11403 Jerez de la
+                Frontera, Cádiz
+              </div>
+            </div>
+            <div class="map-box">
+              <!-- Mapa configurado explícitamente en Bodegas Sánchez Romate, Calle Pizarro -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.8290645239422!2d-6.1399562674020824!3d36.69093750581195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc78fc1bc4d57%3A0xed52124adba370d!2sBodegas%20S%C3%A1nchez%20Romate!5e0!3m2!1ses!2ses!4v1781869673903!5m2!1ses!2ses"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -841,7 +871,7 @@
         }
       };
 
-      // LÓGICA DE CUENTA ATRÁS (Punto 10) - Objetivo: 17 de Octubre de 2026 a las 12:00
+      // Lógica de cuenta atrás
       function updateCountdown() {
         var targetDate = new Date("Oct 17, 2026 12:00:00").getTime();
         var now = new Date().getTime();
@@ -852,14 +882,13 @@
           return;
         }
 
-        // Cálculo explícito de los días restantes
         var days = Math.floor(difference / (1000 * 60 * 60 * 24));
         document.getElementById("countdown-timer").innerHTML = days;
       }
       setInterval(updateCountdown, 60000);
       updateCountdown();
 
-      // Renderizado del Canvas de fondo pixelado retro
+      // Canvas de fondo
       var c = document.getElementById("bgCanvas");
       var ctx = c.getContext("2d");
       var W, H;
